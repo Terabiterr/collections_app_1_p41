@@ -10,10 +10,19 @@ namespace collections_app_1.Services
         public void UpdateStudent(int id, Student student);
         public void DeleteStudent(int id);
         public Student? GetStudentById(int id);
+        public void SortByName();
+        public Student BinarySearchByName(string name);
+        public void Reverse();
     }
     public class StudentService : IStudentService
     {
         private List<Student> Students = AcademyContext.GetStudents() as List<Student>;
+
+        public Student BinarySearchByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
         public void CreateStudent(Student student)
         {
             if(student != null)
@@ -37,6 +46,16 @@ namespace collections_app_1.Services
         {
             var student = Students.Find(s => s.Id == id);
             return student;
+        }
+
+        public void Reverse()
+        {
+            Students.Reverse();
+        }
+
+        public void SortByName()
+        {
+            Students.Sort();
         }
 
         public void UpdateStudent(int id, Student student)

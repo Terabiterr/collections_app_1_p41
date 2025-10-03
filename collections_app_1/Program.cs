@@ -19,6 +19,7 @@ namespace collections_app_1
                 }
                 Console.WriteLine("**********************");
             }
+            studentService.SortByName();
         }
     }
 }
