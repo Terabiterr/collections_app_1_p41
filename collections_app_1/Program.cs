@@ -8,6 +8,8 @@ namespace collections_app_1
         {
             StudentService studentService = new StudentService();
             var students = studentService.GetAll();
+            studentService.SortByName();
+            //studentService.Reverse();
             foreach (var student in students)
             {
                 Console.WriteLine("**********************");
@@ -19,7 +21,16 @@ namespace collections_app_1
                 }
                 Console.WriteLine("**********************");
             }
-            studentService.SortByName();
+            Console.WriteLine("***********Binary Search***********");
+            var found = studentService.BinarySearchByName("Bob");
+            if(found != null)
+            {
+                Console.WriteLine("Found");
+            }
+            else
+            {
+                Console.WriteLine("Not Found");
+            }
         }
     }
 }
