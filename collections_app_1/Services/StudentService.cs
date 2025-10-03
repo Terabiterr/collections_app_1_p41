@@ -41,7 +41,13 @@ namespace collections_app_1.Services
 
         public void UpdateStudent(int id, Student student)
         {
-            //Написати реалізацію метода
+            var student_update = GetStudentById(id);
+            if(student_update != null)
+            {
+                student_update.Id = student.Id;
+                student_update.Name = student.Name;
+                student_update.Books = student.Books;
+            }
         }
     }
 }
