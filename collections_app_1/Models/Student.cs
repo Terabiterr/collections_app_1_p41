@@ -13,10 +13,10 @@
                 return 0;
             }
             Student? other = obj as Student;
-            if (Name[0] < other?.Name[0]) return -1;
-            if (Name[0] > other?.Name[0]) return 1;
-            return 0;
-
+            //if (Name[0] < other?.Name[0]) return -1;
+            //if (Name[0] > other?.Name[0]) return 1;
+            //return 0;
+            return Name.CompareTo(other.Name);
         }
 
         public override string ToString()

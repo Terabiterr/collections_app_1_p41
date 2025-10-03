@@ -1,4 +1,5 @@
-﻿using collections_app_1.Services;
+﻿using collections_app_1.Models;
+using collections_app_1.Services;
 
 namespace collections_app_1
 {
@@ -22,8 +23,9 @@ namespace collections_app_1
                 Console.WriteLine("**********************");
             }
             Console.WriteLine("***********Binary Search***********");
-            var found = studentService.BinarySearchByName("Bob");
-            if(found != null)
+            var found = studentService.BinarySearchByStudent(new Student { Id = 0, Name = "Kwame Nkrumah", Books = null });
+            //var found = students.First(s => s.Name == "Kwame Nkrumah");
+            if (found != null)
             {
                 Console.WriteLine("Found");
             }

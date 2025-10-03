@@ -11,16 +11,16 @@ namespace collections_app_1.Services
         public void DeleteStudent(int id);
         public Student? GetStudentById(int id);
         public void SortByName();
-        public Student BinarySearchByName(string name);
+        public int BinarySearchByStudent(Student student);
         public void Reverse();
     }
     public class StudentService : IStudentService
     {
         private List<Student> Students = AcademyContext.GetStudents() as List<Student>;
 
-        public Student BinarySearchByName(string name)
+        public int BinarySearchByStudent(Student student)
         {
-            throw new NotImplementedException();
+            return Students.BinarySearch(student);
         }
 
         public void CreateStudent(Student student)
