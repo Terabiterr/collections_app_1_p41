@@ -24,17 +24,24 @@ namespace collections_app_1.Services
 
         public void DeleteStudent(int id)
         {
-            Students.Remove()
+            var student = GetStudentById(id);
+            if(student != null)
+            {
+                Students.Remove(student);
+            }
         }
 
-        public IEnumerable<Student> GetAll()
+        public IEnumerable<Student> GetAll() => Students;
+
+        public Student? GetStudentById(int id)
         {
-            throw new NotImplementedException();
+            var student = Students.Find(s => s.Id == id);
+            return student;
         }
 
         public void UpdateStudent(int id, Student student)
         {
-            throw new NotImplementedException();
+            //Написати реалізацію метода
         }
     }
 }
